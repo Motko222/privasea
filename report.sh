@@ -34,6 +34,7 @@ cat >$json << EOF
    "status":"$status",
    "message":"$message",
    "docker_status":"$docker_status",
+   "name":"$NAME",
    "version":"$version"
   }
 }
