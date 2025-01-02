@@ -21,5 +21,5 @@ docker run -d \
   --chains.$CHAIN.signer.key $PK \
   --chains.$CHAIN.customRpcUrls $RPC
 
-cd $patch
+cd $path
 ./log.sh
