@@ -6,7 +6,7 @@ source config
 
 docker run -d \
   -it \
-  --name hyperlane \
+  --name $folder \
   --mount type=bind,source=/root/hyperlane_db_$CHAIN,target=/hyperlane_db_$CHAIN \
   gcr.io/abacus-labs-dev/hyperlane-agent:agents-v1.0.0 \
   ./validator \
