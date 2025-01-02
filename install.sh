@@ -2,7 +2,6 @@
 
 path=$(cd -- $(dirname -- "${BASH_SOURCE[0]}") && pwd)
 folder=$(echo $path | awk -F/ '{print $NF}')
-source config
 
 sudo apt-get update && sudo apt-get upgrade -y
 sudo apt-get install docker.io -y
@@ -14,4 +13,3 @@ nvm install 20
 
 npm install -g @hyperlane-xyz/cli
 docker pull --platform linux/amd64 gcr.io/abacus-labs-dev/hyperlane-agent:agents-v1.0.0
-mkdir -p /root/hyperlane_db_$CHAIN && chmod -R 777 /root/hyperlane_db_$CHAIN
