@@ -21,6 +21,7 @@ docker run -d \
   --validator.key $PK \
   --chains.$CHAIN.signer.key $PK \
   --chains.$CHAIN.customRpcUrls $RPC
+  --restart always
 
 cd $path
 ./log.sh
