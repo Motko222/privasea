@@ -20,7 +20,7 @@ docker run -d \
   --checkpointSyncer.path /hyperlane_db_$CHAIN/$CHAIN_checkpoints \
   --validator.key $PK \
   --chains.$CHAIN.signer.key $PK \
-  --chains.$CHAIN.customRpcUrls $RPC
+  --chains.$CHAIN.customRpcUrls $RPC \
   --restart always
 
 cd $path
