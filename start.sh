@@ -5,6 +5,9 @@ folder=$(echo $path | awk -F/ '{print $NF}')
 cd $path
 source config
 
+docker stop $folder
+docker rm $folder
+
 docker run -d \
   -it \
   --name $folder \
