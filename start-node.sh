@@ -8,7 +8,9 @@ source config
 docker stop $folder
 docker rm $folder
 
-docker pull privasea/node-calc:$NODE_VERSION
+version=v0.0.1
+
+docker pull privasea/node-calc:$version
 
 docker run -d \
   --name $folder \
@@ -17,6 +19,6 @@ docker run -d \
   -e HOST=$IP \
   -e KEYSTORE=$KEY \
   -e KEYSTORE_PASSWORD=$PASS \
-  -v /root/privesea-key:/app/config privasea/node-calc:$NODE_VERSION
+  -v /root/privesea-key:/app/config privasea/node-calc:$version
 
 ./log.sh
