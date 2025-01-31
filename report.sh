@@ -8,9 +8,8 @@ source ~/.bash_profile
 cd $path
 source config
 
-container=$(docker ps | grep $folder | awk '{print $NF}')
-[ $container ] && docker_status=$(docker inspect $container | jq -r .[].State.Status)
-version=$(docker ps -a --no-trunc | grep $folder | awk -F 'hyperlane-agent:agents-' '{print $2}' | awk '{print $1}')
+docker_status=$(docker inspect $folder | jq -r .[].State.Status)
+version=$(docker ps -a --no-trunc | grep $folder | awk -F 'privasea/node-calc:' '{print $2}' | awk '{print $1}')
 
 case $docker_status in
   running) status=ok; message="" ;;
@@ -29,12 +28,11 @@ cat >$json << EOF
    "owner":"$OWNER"
   },
   "fields": {
-   "network":"$NETWORK",
-   "chain":"$CHAIN",
+   "network":"testnet",
+   "chain":"privasea",
    "status":"$status",
    "message":"$message",
    "docker_status":"$docker_status",
-   "name":"$NAME",
    "version":"$version"
   }
 }
