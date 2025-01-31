@@ -19,6 +19,6 @@ docker run -d \
   -e HOST=$IP:8181 \
   -e KEYSTORE=$KEY \
   -e KEYSTORE_PASSWORD=$PASS \
-  -v /root/privesea-key:/app/config privasea/node-calc:$version
+  -v /root/privesea-keys:/app/config privasea/node-calc:$version
 
 ./log.sh
